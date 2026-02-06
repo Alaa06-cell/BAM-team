@@ -78,5 +78,4 @@ prevBtn.addEventListener("click", () => {
   index = (index - 1 + slides.length) % slides.length;
   updateSlide();
 });
-
 });
