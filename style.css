@@ -419,8 +419,9 @@ nav {
   height: 80px;              /* 🔒 lock header height */
 }
 .logo {
-  margin-left: -270px; /* 👈 move logo slightly to the left */
+  margin-left: 0;
 }
+
 #insight-text {
   white-space: pre-line;
 }
@@ -503,4 +504,94 @@ nav {
 
 .bt1:active {
   transform: scale(0.9);
+}
+/* ===============================
+   📱 MOBILE FIX — DO NOT TOUCH DESKTOP
+   =============================== */
+@media (max-width: 900px) {
+
+  /* ===== HEADER / NAV ===== */
+  nav {
+    height: auto;
+    padding: 16px;
+    justify-content: center;
+  }
+
+  .logo {
+    margin-left: 0 !important;   /* kill negative margin */
+  }
+
+  .logo img {
+    height: 42px !important;     /* fix giant logo */
+  }
+
+  nav ul {
+    display: none;               /* keep hidden on mobile */
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 70vh;
+    padding: 0 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 7vw, 42px);
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* ===== SLIDER / SIDEBAR ===== */
+  .slider {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 48px auto;
+  }
+
+  .carousel {
+    height: 260px;               /* mobile-friendly */
+  }
+
+  .sidebar {
+    text-align: center;
+  }
+
+  /* ===== SERVICES ===== */
+  .service-block {
+    grid-template-columns: 1fr !important;
+    row-gap: 24px;
+  }
+
+  .service-block h3,
+  .service-block p,
+  .service-block .service-image {
+    grid-column: 1 !important;
+  }
+
+  .service-image {
+    max-width: 100%;
+  }
+
+  .service-block p {
+    padding-left: 0;
+    max-width: 100%;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  .service-block p::before {
+    display: none;
+  }
+
+  /* ===== CONTACT ===== */
+  #contact form {
+    width: 100%;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 32px 16px;
+  }
 }
