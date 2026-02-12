@@ -1,4 +1,3 @@
-alert("attendtion !!!! , open the window on mode pc to see clearly the page ");
 document.addEventListener("DOMContentLoaded", function () {
   emailjs.init("N0bPy4_VxwpFpPivu");
 

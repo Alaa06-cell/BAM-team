@@ -510,23 +510,29 @@ nav {
    =============================== */
 @media (max-width: 900px) {
 
-  /* ===== HEADER / NAV ===== */
-  nav {
-    height: auto;
+    nav {
+    flex-direction: row;          /* keep horizontal */
+    justify-content: space-between;
+    align-items: center;
     padding: 16px;
-    justify-content: center;
   }
 
   .logo {
-    margin-left: 0 !important;   /* kill negative margin */
+    margin-left: 0 !important;
   }
 
   .logo img {
-    height: 42px !important;     /* fix giant logo */
+    height: 150px;   /* slightly smaller for phone */
   }
 
   nav ul {
-    display: none;               /* keep hidden on mobile */
+    display: flex !important;
+    flex-direction: row;          /* keep in one line */
+    gap: 16px;
+  }
+
+  nav a {
+    font-size: 14px;              /* smaller text for phone */
   }
 
   /* ===== HERO ===== */
@@ -558,26 +564,28 @@ nav {
     text-align: center;
   }
 
-  /* ===== SERVICES ===== */
   .service-block {
-    grid-template-columns: 1fr !important;
-    row-gap: 24px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
   }
 
-  .service-block h3,
-  .service-block p,
+  /* Order control */
+  .service-block h3 {
+    order: 1;
+    margin-top: 0;
+  }
+
   .service-block .service-image {
-    grid-column: 1 !important;
-  }
-
-  .service-image {
-    max-width: 100%;
+    order: 2;
   }
 
   .service-block p {
+    order: 3;
     padding-left: 0;
     max-width: 100%;
-    text-align: center;
     align-items: flex-start;
   }
 
@@ -594,4 +602,12 @@ nav {
   footer {
     padding: 32px 16px;
   }
+  .carousel-btn.prev {
+  left: 6px;
+}
+
+.carousel-btn.next {
+  right: 6px;
+}
+
 }
